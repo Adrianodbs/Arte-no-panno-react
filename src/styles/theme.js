@@ -1,27 +1,27 @@
 export const dark = {
-  primary: '#1B1F38',
-  secondary: '#252A48',
-  tertiary: '#313862',
+  primario: '#1B1F38',
+  secundario: '#252A48',
+  terciario: '#313862',
 
-  white: '#FFF',
-  black: '#000',
-  gray: '#BFBFBF',
+  branco: '#FFF',
+  preto: '#000',
+  cinza: '#BFBFBF',
 
-  success: '#4E41F0',
+  sucesso: '#4E41F0',
   info: '#F7931B',
-  warning: '#E44C4E'
+  perigo: '#E44C4E'
 }
 
 export const light = {
-  primary: '#DCDCDC',
-  secondary: '#FFFFFF',
-  tertiary: '#F5F5F5',
+  primario: '#DCDCDC',
+  secundario: '#FFFFFF',
+  terciario: '#F5F5F5',
 
-  white: '#000',
-  black: '#FFF',
-  gray: '#BFBFBF',
+  branco: '#000',
+  preto: '#FFF',
+  cinza: '#BFBFBF',
 
-  success: '#03BB85',
+  sucesso: '#03BB85',
   info: '#3B5998',
-  warning: '#FF6961'
+  perigo: '#FF6961'
 }

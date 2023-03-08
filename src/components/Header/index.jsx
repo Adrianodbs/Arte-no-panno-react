@@ -1,9 +1,10 @@
+import Toggle from './components/Toggle'
 import * as C from './styles'
 
 function Header() {
   return (
     <C.Container>
-      <h1>Header</h1>
+      <Toggle />
     </C.Container>
   )
 }

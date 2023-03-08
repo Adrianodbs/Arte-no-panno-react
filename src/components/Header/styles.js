@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  color: ${({ theme }) => theme.white};
-  background-color: ${({ theme }) => theme.primary};
-  width: 500px;
+export const Container = styled.header`
+  color: ${({ theme }) => theme.branco};
+  background-color: ${({ theme }) => theme.primario};
+  width: 100%;
 `
