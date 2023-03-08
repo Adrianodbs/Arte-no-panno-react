@@ -1,4 +1,6 @@
 import * as C from './styles'
+import { Lista } from '../../lista-de-produtos/lista'
+import Produto from './components/Produto'
 
 function Main() {
   return (
@@ -14,6 +16,16 @@ function Main() {
           </ul>
         </div>
       </C.Header>
+      <C.Produtos>
+        {Lista.map((produto, index) => (
+          <Produto
+            key={index}
+            img={produto.imagem}
+            titulo={produto.nome}
+            valor={produto.valor}
+          />
+        ))}
+      </C.Produtos>
     </C.Container>
   )
 }

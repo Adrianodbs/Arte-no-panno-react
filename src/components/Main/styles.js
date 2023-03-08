@@ -32,8 +32,16 @@ export const Header = styled.div`
       transition: all 0.3s;
 
       &:hover {
-        opacity: 0.6;
+        background-color: ${({ theme }) => theme.branco};
+        color: ${({ theme }) => theme.terciario};
       }
     }
   }
+`
+
+export const Produtos = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 60px;
 `
