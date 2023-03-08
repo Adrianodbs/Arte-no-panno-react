@@ -11,8 +11,16 @@ export const ThemeProvider = ({ children }) => {
     setIsChecked(!isChecked)
   }
 
+  const theme = () => {
+    if (isChecked) {
+      return dark
+    } else {
+      return light
+    }
+  }
+
   return (
-    <ThemeContext.Provider value={{ isChecked, handleCheck }}>
+    <ThemeContext.Provider value={{ theme, handleCheck }}>
       {children}
     </ThemeContext.Provider>
   )
