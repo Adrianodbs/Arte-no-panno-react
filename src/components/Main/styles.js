@@ -41,6 +41,7 @@ export const Header = styled.div`
 
 export const Produtos = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
   padding: 40px 60px;
