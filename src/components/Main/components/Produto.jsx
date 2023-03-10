@@ -4,15 +4,18 @@ function Produto({ img, titulo, valor }) {
   return (
     <Container>
       <img src={img} alt={titulo} />
-      <p>{titulo}</p>
-      <span>{valor}</span>
+      <div className="info">
+        <p>{titulo}</p>
+        <span>{valor}</span>
+        <button>Adicionar ao carrinho</button>
+      </div>
     </Container>
   )
 }
 
 const Container = styled.div`
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 320px;
   background-color: ${({ theme }) => theme.terciario};
   border-radius: 8px;
 
@@ -25,9 +28,18 @@ const Container = styled.div`
 
   img {
     width: 100%;
-    height: 70%;
+    max-height: 60%;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    justify-content: flex-end;
+    margin-top: 10px;
   }
 
   p {
@@ -39,6 +51,14 @@ const Container = styled.div`
 
   span {
     color: ${({ theme }) => theme.cinza};
+  }
+
+  button {
+    background-color: ${({ theme }) => theme.info};
+    padding: 8px;
+    border-radius: 6px;
+    color: ${({ theme }) => theme.branco};
+    margin-top: 10px;
   }
 `
 

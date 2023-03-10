@@ -4,6 +4,7 @@ export const Container = styled.header`
   color: ${({ theme }) => theme.branco};
   background-color: ${({ theme }) => theme.primario};
   width: 100%;
+  position: relative;
 
   display: flex;
   justify-content: space-between;
@@ -15,6 +16,10 @@ export const Container = styled.header`
     object-fit: cover;
     width: 90px;
     margin-top: -20px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `
 
