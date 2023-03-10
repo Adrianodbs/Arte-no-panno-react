@@ -3,12 +3,14 @@ import { Lista } from '../../lista-de-produtos/lista'
 import Produto from './components/Produto'
 
 import { useState } from 'react'
+import ComoComprar from '../como-comprar'
 
 function Main() {
   const [produto, setProduto] = useState('todos')
 
   return (
     <C.Container>
+      <ComoComprar />
       <C.Header>
         <h1>Categorias</h1>
         <div>

@@ -9,6 +9,13 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+
+  .logo {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 90px;
+    margin-top: -20px;
+  }
 `
 
 export const Right = styled.div`

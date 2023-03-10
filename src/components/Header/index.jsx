@@ -1,12 +1,13 @@
 import Toggle from './components/Toggle'
 import * as C from './styles'
 import { BsSearch, BsCartDash, BsFillCartFill } from 'react-icons/bs'
+import logo from '../../../public/assets/logo.png'
 
 function Header() {
   return (
     <C.Container>
       <Toggle />
-      <h1>Arte no Panno</h1>
+      <img className="logo" src={logo} alt="Logo" />
       <C.Right>
         <div>
           <BsSearch className="lupa" size={20} />
