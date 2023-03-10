@@ -20,6 +20,10 @@ export const Container = styled.header`
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (max-width: 350px) {
+      display: none;
+    }
   }
 `
 
@@ -42,12 +46,20 @@ export const Right = styled.div`
     &::placeholder {
       color: ${({ theme }) => theme.branco};
     }
+
+    @media (max-width: 670px) {
+      display: none;
+    }
   }
 
   .lupa {
     position: absolute;
     top: 20%;
     left: 6px;
+
+    @media (max-width: 670px) {
+      display: none;
+    }
   }
 
   .cart {

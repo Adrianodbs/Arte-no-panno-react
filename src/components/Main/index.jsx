@@ -2,6 +2,8 @@ import * as C from './styles'
 import { Lista } from '../../lista-de-produtos/lista'
 import Produto from './components/Produto'
 
+import { AiOutlineArrowDown } from 'react-icons/ai'
+
 import { useState } from 'react'
 import ComoComprar from '../como-comprar'
 
@@ -12,7 +14,10 @@ function Main() {
     <C.Container>
       <ComoComprar />
       <C.Header>
-        <h1>Categorias</h1>
+        <h1>
+          Principais categorias <AiOutlineArrowDown className="menu" />
+        </h1>
+
         <div>
           <ul>
             <li onClick={() => setProduto('todos')}>Todos os itens</li>
@@ -25,13 +30,19 @@ function Main() {
       <C.Produtos>
         {produto === 'todos' &&
           Lista.map(item => (
-            <Produto img={item.imagem} titulo={item.nome} valor={item.valor} />
+            <Produto
+              key={item.nome}
+              img={item.imagem}
+              titulo={item.nome}
+              valor={item.valor}
+            />
           ))}
         {produto === 'chaveiro' &&
           Lista.map(item => {
             if (item.tipo === 'chaveiro') {
               return (
                 <Produto
+                  key={item.nome}
                   img={item.imagem}
                   titulo={item.nome}
                   valor={item.valor}
@@ -44,6 +55,7 @@ function Main() {
             if (item.tipo === 't-shirt') {
               return (
                 <Produto
+                  key={item.nome}
                   img={item.imagem}
                   titulo={item.nome}
                   valor={item.valor}
@@ -56,6 +68,7 @@ function Main() {
             if (item.tipo === 'mural') {
               return (
                 <Produto
+                  key={item.nome}
                   img={item.imagem}
                   titulo={item.nome}
                   valor={item.valor}

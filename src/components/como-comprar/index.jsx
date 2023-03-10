@@ -22,8 +22,8 @@ function ComoComprar() {
         pagination
         loop
       >
-        {slides.map(slide => (
-          <SwiperSlide>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
             <img src={slide} alt={slide} />
           </SwiperSlide>
         ))}
