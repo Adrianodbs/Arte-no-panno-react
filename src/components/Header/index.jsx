@@ -7,7 +7,7 @@ function Header() {
   return (
     <C.Container>
       <Toggle />
-      <img className="logo" src={logo} alt="Logo" />
+      <h1>Arte no Panno</h1>
       <C.Right>
         <div>
           <BsSearch className="lupa" size={20} />

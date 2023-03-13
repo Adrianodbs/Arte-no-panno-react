@@ -7,15 +7,15 @@ export const Container = styled.div`
   align-items: center;
 
   .slide-container {
-    max-width: 500px;
+    max-width: 330px;
     width: 90%;
-    max-height: 600px;
+    max-height: 400px;
     user-select: none;
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
 `

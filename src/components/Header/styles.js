@@ -11,19 +11,13 @@ export const Container = styled.header`
   align-items: center;
   padding: 10px 30px;
 
-  .logo {
-    border-radius: 50%;
-    object-fit: cover;
-    width: 90px;
-    margin-top: -20px;
+  h1 {
     position: absolute;
-    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-
-    @media (max-width: 350px) {
-      display: none;
-    }
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+    font-weight: 400;
   }
 `
 

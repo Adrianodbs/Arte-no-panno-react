@@ -13,9 +13,9 @@ export const ThemeProvider = ({ children }) => {
 
   const theme = () => {
     if (isChecked) {
-      return dark
-    } else {
       return light
+    } else {
+      return dark
     }
   }
 

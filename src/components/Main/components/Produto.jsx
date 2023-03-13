@@ -7,7 +7,7 @@ function Produto({ img, titulo, valor }) {
       <div className="info">
         <p>{titulo}</p>
         <span>{valor}</span>
-        <button>Adicionar ao carrinho</button>
+        <button style={{ color: '#fff' }}>Adicionar ao carrinho</button>
       </div>
     </Container>
   )
@@ -54,11 +54,15 @@ const Container = styled.div`
   }
 
   button {
-    background-color: ${({ theme }) => theme.info};
+    background-color: ${({ theme }) => theme.perigo};
+    font-weight: bold;
     padding: 8px;
     border-radius: 6px;
-    color: ${({ theme }) => theme.branco};
     margin-top: 10px;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `
 
