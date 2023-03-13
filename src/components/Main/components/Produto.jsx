@@ -1,14 +1,17 @@
 import styled from 'styled-components'
 
-function Produto({ img, titulo, valor, buttonTxt, onClick }) {
+function Produto({ img, titulo, valor, buttonTxt, onClick, menos, mais }) {
   return (
     <Container>
       <img src={img} alt={titulo} />
       <div className="info">
         <p>{titulo}</p>
         <span>{valor}</span>
+
         <button onClick={onClick} style={{ color: '#fff' }}>
+          {menos}
           {buttonTxt}
+          {mais}
         </button>
       </div>
     </Container>
@@ -58,9 +61,19 @@ const Container = styled.div`
   button {
     background-color: ${({ theme }) => theme.perigo};
     font-weight: bold;
+    font-size: 18px;
     padding: 8px;
     border-radius: 6px;
     margin-top: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    align-items: center;
+
+    svg {
+      font-size: 23px;
+    }
 
     &:hover {
       opacity: 0.9;

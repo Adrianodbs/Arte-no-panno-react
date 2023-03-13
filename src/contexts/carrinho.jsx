@@ -6,10 +6,9 @@ export const CarrinhoProvider = ({ children }) => {
   const [produtoAdicionado, setProdutoAdicionado] = useState([])
 
   function adicionarProdutoAoCarrinho(item) {
+    setProdutoAdicionado(prev => [...prev, item])
     localStorage.setItem('@produto-carrinho', JSON.stringify(produtoAdicionado))
   }
-
-  adicionarProdutoAoCarrinho()
 
   function buscarItemNoCarrinho() {
     const itemAdicionado = localStorage.getItem('@produto-carrinho')
