@@ -4,11 +4,14 @@ import Produto from './components/Produto'
 
 import { AiOutlineArrowDown } from 'react-icons/ai'
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import ComoComprar from '../como-comprar'
+import { CarrinhoContext } from '../../contexts/carrinho'
 
 function Main() {
   const [produto, setProduto] = useState('todos')
+
+  const { adicionarProdutoAoCarrinho } = useContext(CarrinhoContext)
 
   return (
     <C.Container>
@@ -35,6 +38,8 @@ function Main() {
               img={item.imagem}
               titulo={item.nome}
               valor={item.valor}
+              buttonTxt="Adicionar ao carrinho"
+              onClick={() => adicionarProdutoAoCarrinho(item)}
             />
           ))}
         {produto === 'chaveiro' &&
@@ -46,6 +51,8 @@ function Main() {
                   img={item.imagem}
                   titulo={item.nome}
                   valor={item.valor}
+                  buttonTxt="Adicionar ao carrinho"
+                  onClick={() => adicionarProdutoAoCarrinho(item)}
                 />
               )
             }
@@ -59,6 +66,8 @@ function Main() {
                   img={item.imagem}
                   titulo={item.nome}
                   valor={item.valor}
+                  buttonTxt="Adicionar ao carrinho"
+                  onClick={() => adicionarProdutoAoCarrinho(item)}
                 />
               )
             }
@@ -72,6 +81,8 @@ function Main() {
                   img={item.imagem}
                   titulo={item.nome}
                   valor={item.valor}
+                  buttonTxt="Adicionar ao carrinho"
+                  onClick={() => adicionarProdutoAoCarrinho(item)}
                 />
               )
             }

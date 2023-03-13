@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-function Produto({ img, titulo, valor }) {
+function Produto({ img, titulo, valor, buttonTxt, onClick }) {
   return (
     <Container>
       <img src={img} alt={titulo} />
       <div className="info">
         <p>{titulo}</p>
         <span>{valor}</span>
-        <button style={{ color: '#fff' }}>Adicionar ao carrinho</button>
+        <button onClick={onClick} style={{ color: '#fff' }}>
+          {buttonTxt}
+        </button>
       </div>
     </Container>
   )

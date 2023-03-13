@@ -9,19 +9,22 @@ import { ThemeContext } from './contexts/theme'
 
 import Main from './components/Main'
 import Carrinho from './pages/Carrinho'
+import { CarrinhoProvider } from './contexts/carrinho'
 
 function App() {
   const { theme } = useContext(ThemeContext)
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Global />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/carrinho" element={<Carrinho />} />
-        </Routes>
-      </BrowserRouter>
+      <CarrinhoProvider>
+        <BrowserRouter>
+          <Global />
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/carrinho" element={<Carrinho />} />
+          </Routes>
+        </BrowserRouter>
+      </CarrinhoProvider>
     </ThemeProvider>
   )
 }
