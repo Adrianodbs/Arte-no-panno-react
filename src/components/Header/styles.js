@@ -1,10 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-  color: #fff;
-  background-color: var(--cor-teste);
+  background-color: #fff;
   width: 100%;
-  position: relative;
 
   display: flex;
   justify-content: space-between;
@@ -12,12 +10,10 @@ export const Container = styled.header`
   padding: 10px 30px;
 
   h1 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Sacramento', cursive;
+    font-family: 'Saira Stencil One', cursive;
     font-size: 40px;
     font-weight: 400;
+    color: var(--dark-gray);
   }
 `
 
@@ -30,6 +26,6 @@ export const Right = styled.div`
   svg {
     cursor: pointer;
     text-decoration: none;
-    color: #fff;
+    color: var(--dark-gray);
   }
 `

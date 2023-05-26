@@ -5,7 +5,7 @@ export const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Saira', sans-serif;
   }
 
   
@@ -19,6 +19,11 @@ export const Global = createGlobalStyle`
   }
 
   :root{
-    --cor-teste: #f5f2f3
+    --gray: #DEDEDE;
+    --dark-gray: #41414D;
+    --black: #09090A;
+    --orange:#FFA585;
+    --orange-low:#FFA585;
+    --red: #DE3838;
   }
 `
