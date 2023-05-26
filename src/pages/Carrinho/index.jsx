@@ -8,14 +8,17 @@ import { BsFillTrash3Fill } from 'react-icons/bs'
 
 function Carrinho() {
   const [itens, setItens] = useState([])
+  const [valorTotal, setValorTotal] = useState(0)
 
   const { buscarItemNoCarrinho, excluirProdutoDoCarrinho } =
     useContext(CarrinhoContext)
 
   useEffect(() => {
     const carrinhoItens = buscarItemNoCarrinho()
-
     setItens(carrinhoItens)
+
+    const total = carrinhoItens.reduce((acc, item) => acc + item.valor, 0)
+    setValorTotal(total)
   }, [buscarItemNoCarrinho])
 
   const handleExcluirProduto = produto => {
@@ -38,6 +41,11 @@ function Carrinho() {
       </C.Itens>
       <C.Resumo>
         <h1>Resumo</h1>
+        <div>
+          <p>Quantidade de itens: {itens.length}</p>
+          <p>Valor: R${valorTotal} </p>
+        </div>
+        <button>Finalizar compra</button>
       </C.Resumo>
     </C.Container>
   )

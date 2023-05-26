@@ -58,4 +58,8 @@ export const Produtos = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+
+  a {
+    text-decoration: none;
+  }
 `

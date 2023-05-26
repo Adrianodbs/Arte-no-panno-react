@@ -6,7 +6,7 @@ function Produto({ img, titulo, valor }) {
       <img src={img} alt={titulo} />
       <div className="info">
         <p>{titulo}</p>
-        <span>{valor}</span>
+        <span>R$ {valor}</span>
       </div>
     </Container>
   )
