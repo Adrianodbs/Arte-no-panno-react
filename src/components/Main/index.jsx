@@ -2,16 +2,12 @@ import * as C from './styles'
 import { Lista } from '../../lista-de-produtos/lista'
 import Produto from './components/Produto'
 
-import { AiOutlineArrowDown } from 'react-icons/ai'
-
 import { useState, useContext } from 'react'
 import ComoComprar from '../como-comprar'
-import { CarrinhoContext } from '../../contexts/carrinho'
+import { Link } from 'react-router-dom'
 
 function Main() {
   const [produto, setProduto] = useState('todos')
-
-  const { adicionarProdutoAoCarrinho } = useContext(CarrinhoContext)
 
   return (
     <C.Container>
@@ -48,27 +44,25 @@ function Main() {
       <C.Produtos>
         {produto === 'todos' &&
           Lista.map(item => (
-            <Produto
-              key={item.nome}
-              img={item.imagem}
-              titulo={item.nome}
-              valor={item.valor}
-              buttonTxt="Adicionar ao carrinho"
-              onClick={() => adicionarProdutoAoCarrinho(item)}
-            />
+            <Link to={`/produto/${item.id}`} key={item.nome}>
+              <Produto
+                img={item.imagem}
+                titulo={item.nome}
+                valor={item.valor}
+              />
+            </Link>
           ))}
         {produto === 'chaveiro' &&
           Lista.map(item => {
             if (item.tipo === 'chaveiro') {
               return (
-                <Produto
-                  key={item.nome}
-                  img={item.imagem}
-                  titulo={item.nome}
-                  valor={item.valor}
-                  buttonTxt="Adicionar ao carrinho"
-                  onClick={() => adicionarProdutoAoCarrinho(item)}
-                />
+                <Link to={`/produto/${item.id}`} key={item.nome}>
+                  <Produto
+                    img={item.imagem}
+                    titulo={item.nome}
+                    valor={item.valor}
+                  />
+                </Link>
               )
             }
           })}
@@ -76,14 +70,13 @@ function Main() {
           Lista.map(item => {
             if (item.tipo === 't-shirt') {
               return (
-                <Produto
-                  key={item.nome}
-                  img={item.imagem}
-                  titulo={item.nome}
-                  valor={item.valor}
-                  buttonTxt="Adicionar ao carrinho"
-                  onClick={() => adicionarProdutoAoCarrinho(item)}
-                />
+                <Link to={`/produto/${item.id}`} key={item.nome}>
+                  <Produto
+                    img={item.imagem}
+                    titulo={item.nome}
+                    valor={item.valor}
+                  />
+                </Link>
               )
             }
           })}
@@ -91,14 +84,13 @@ function Main() {
           Lista.map(item => {
             if (item.tipo === 'mural') {
               return (
-                <Produto
-                  key={item.nome}
-                  img={item.imagem}
-                  titulo={item.nome}
-                  valor={item.valor}
-                  buttonTxt="Adicionar ao carrinho"
-                  onClick={() => adicionarProdutoAoCarrinho(item)}
-                />
+                <Link to={`/produto/${item.id}`} key={item.nome}>
+                  <Produto
+                    img={item.imagem}
+                    titulo={item.nome}
+                    valor={item.valor}
+                  />
+                </Link>
               )
             }
           })}

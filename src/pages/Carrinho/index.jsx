@@ -2,29 +2,32 @@ import Produto from '../../components/Main/components/Produto'
 
 import * as C from './styles'
 
-import { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { CarrinhoContext } from '../../contexts/carrinho'
 
-import { AiOutlinePlusCircle, AiOutlineMinusCircle } from 'react-icons/ai'
-
 function Carrinho() {
-  const { buscarItemNoCarrinho } = useContext(CarrinhoContext)
+  const [itens, setItens] = useState([])
 
-  const itens = buscarItemNoCarrinho()
+  const { buscarItemNoCarrinho, excluirProdutoDoCarrinho } =
+    useContext(CarrinhoContext)
+
+  const handleExcluirProduto = produto => {
+    excluirProdutoDoCarrinho(produto)
+  }
+
+  useEffect(() => {
+    const carrinhoItens = buscarItemNoCarrinho()
+    setItens(carrinhoItens)
+  }, [buscarItemNoCarrinho])
 
   return (
     <C.Container>
       <C.Itens>
         {itens.map((item, index) => (
-          <Produto
-            key={index}
-            img={item.imagem}
-            titulo={item.nome}
-            valor={item.valor}
-            menos={<AiOutlineMinusCircle />}
-            buttonTxt="1"
-            mais={<AiOutlinePlusCircle />}
-          />
+          <div key={index}>
+            <Produto img={item.imagem} titulo={item.nome} valor={item.valor} />
+            <button onClick={() => handleExcluirProduto(item)}>Excluir</button>
+          </div>
         ))}
       </C.Itens>
       <C.Resumo>
