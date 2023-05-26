@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
-  color: ${({ theme }) => theme.branco};
-  background-color: ${({ theme }) => theme.primario};
+  color: #fff;
+  background-color: var(--cor-teste);
   width: 100%;
   position: relative;
 
@@ -30,6 +30,6 @@ export const Right = styled.div`
   svg {
     cursor: pointer;
     text-decoration: none;
-    color: ${({ theme }) => theme.branco};
+    color: #fff;
   }
 `

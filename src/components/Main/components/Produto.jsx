@@ -21,7 +21,7 @@ function Produto({ img, titulo, valor, buttonTxt, onClick, menos, mais }) {
 const Container = styled.div`
   width: 250px;
   height: 320px;
-  background-color: ${({ theme }) => theme.terciario};
+  background-color: #313862;
   border-radius: 8px;
 
   display: flex;
@@ -29,7 +29,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  border: 1px solid ${({ theme }) => theme.cinza};
+  border: 1px solid #bfbfbf;
 
   img {
     width: 100%;
@@ -49,17 +49,17 @@ const Container = styled.div`
 
   p {
     font-weight: 500;
-    color: ${({ theme }) => theme.branco};
+    color: #fff;
     padding: 6px;
     text-align: center;
   }
 
   span {
-    color: ${({ theme }) => theme.cinza};
+    color: #bfbfbf;
   }
 
   button {
-    background-color: ${({ theme }) => theme.perigo};
+    background-color: #e44c4e;
     font-weight: bold;
     font-size: 18px;
     padding: 8px;

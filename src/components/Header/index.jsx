@@ -1,4 +1,3 @@
-import Toggle from './components/Toggle'
 import * as C from './styles'
 import { BsCartDash } from 'react-icons/bs'
 import { AiOutlineHome } from 'react-icons/ai'
@@ -7,7 +6,6 @@ import { Link } from 'react-router-dom'
 function Header() {
   return (
     <C.Container>
-      <Toggle />
       <h1>Arte no Panno</h1>
       <C.Right>
         <Link to="/">

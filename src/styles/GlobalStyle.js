@@ -17,4 +17,8 @@ export const Global = createGlobalStyle`
   button{
     cursor: pointer;
   }
+
+  :root{
+    --cor-teste: #f5f2f3
+  }
 `
