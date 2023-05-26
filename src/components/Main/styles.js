@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const Container = styled.main`
   width: 100%;
-  background-color: #252a48;
+  background-color: var(--gray);
+  padding: 20px 40px;
 `
 
 export const Header = styled.div`
@@ -10,9 +11,8 @@ export const Header = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  color: #fff;
-  padding: 40px;
-  background-color: #1b1f38;
+  color: var(--light-gray);
+  margin: 70px 0 50px;
 
   @media (max-width: 790px) {
     padding: 20px 10px;
@@ -23,54 +23,25 @@ export const Header = styled.div`
     flex-direction: column;
   }
 
-  .menu {
-    display: none;
-
-    @media (max-width: 615px) {
-      display: block;
-    }
-  }
-
-  h1 {
-    font-size: 20px;
-
-    @media (max-width: 790px) {
-      font-size: 16px;
-    }
-
-    @media (max-width: 615px) {
-      display: flex;
-      gap: 10px;
-    }
-  }
-
   ul {
     display: flex;
-    gap: 10px;
+    gap: 20px;
 
-    @media (max-width: 615px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin-top: 8px;
+    .active {
+      border-bottom: 2px solid var(--orange);
+      color: var(--dark-gray);
     }
 
     li {
       list-style: none;
-      width: 120px;
-      border: 1px solid #bfbfbf;
+
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 7px 4px;
-      border-radius: 8px;
-      cursor: pointer;
-      background-color: #313862;
-      transition: all 0.3s;
 
-      &:hover {
-        background-color: #fff;
-        color: #313862;
-      }
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 500;
 
       @media (max-width: 790px) {
         font-size: 14px;
@@ -83,9 +54,8 @@ export const Header = styled.div`
 
 export const Produtos = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 40px 60px;
 `

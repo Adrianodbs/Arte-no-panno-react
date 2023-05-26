@@ -17,16 +17,32 @@ function Main() {
     <C.Container>
       <ComoComprar />
       <C.Header>
-        <h1>
-          Principais categorias <AiOutlineArrowDown className="menu" />
-        </h1>
-
         <div>
           <ul>
-            <li onClick={() => setProduto('todos')}>Todos os itens</li>
-            <li onClick={() => setProduto('chaveiro')}>Chaveiros</li>
-            <li onClick={() => setProduto('t-shirt')}>T-shirts</li>
-            <li onClick={() => setProduto('mural')}>Murais</li>
+            <li
+              className={produto === 'todos' ? 'active' : ''}
+              onClick={() => setProduto('todos')}
+            >
+              Todos os itens
+            </li>
+            <li
+              className={produto === 'chaveiro' ? 'active' : ''}
+              onClick={() => setProduto('chaveiro')}
+            >
+              Chaveiros
+            </li>
+            <li
+              className={produto === 't-shirt' ? 'active' : ''}
+              onClick={() => setProduto('t-shirt')}
+            >
+              T-shirts
+            </li>
+            <li
+              className={produto === 'mural' ? 'active' : ''}
+              onClick={() => setProduto('mural')}
+            >
+              Murais
+            </li>
           </ul>
         </div>
       </C.Header>

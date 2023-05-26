@@ -17,5 +17,10 @@ export const Container = styled.div`
       height: 100%;
       object-fit: cover;
     }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      --swiper-navigation-size: 30px;
+    }
   }
 `
