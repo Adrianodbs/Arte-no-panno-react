@@ -15,7 +15,6 @@ function Main() {
 
   return (
     <C.Container>
-      <ComoComprar />
       <C.Header>
         <div>
           <ul>
@@ -104,6 +103,7 @@ function Main() {
             }
           })}
       </C.Produtos>
+      <ComoComprar />
     </C.Container>
   )
 }
