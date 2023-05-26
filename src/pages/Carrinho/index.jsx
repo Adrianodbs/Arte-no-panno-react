@@ -4,6 +4,7 @@ import * as C from './styles'
 
 import { useContext, useState, useEffect } from 'react'
 import { CarrinhoContext } from '../../contexts/carrinho'
+import { BsFillTrash3Fill } from 'react-icons/bs'
 
 function Carrinho() {
   const [itens, setItens] = useState([])
@@ -11,14 +12,15 @@ function Carrinho() {
   const { buscarItemNoCarrinho, excluirProdutoDoCarrinho } =
     useContext(CarrinhoContext)
 
+  useEffect(() => {
+    const carrinhoItens = buscarItemNoCarrinho()
+
+    setItens(carrinhoItens)
+  }, [buscarItemNoCarrinho])
+
   const handleExcluirProduto = produto => {
     excluirProdutoDoCarrinho(produto)
   }
-
-  useEffect(() => {
-    const carrinhoItens = buscarItemNoCarrinho()
-    setItens(carrinhoItens)
-  }, [buscarItemNoCarrinho])
 
   return (
     <C.Container>
@@ -26,7 +28,11 @@ function Carrinho() {
         {itens.map((item, index) => (
           <div key={index}>
             <Produto img={item.imagem} titulo={item.nome} valor={item.valor} />
-            <button onClick={() => handleExcluirProduto(item)}>Excluir</button>
+            <div className="actions">
+              <button onClick={() => handleExcluirProduto(item)}>
+                <BsFillTrash3Fill size={20} color="#fff" />
+              </button>
+            </div>
           </div>
         ))}
       </C.Itens>

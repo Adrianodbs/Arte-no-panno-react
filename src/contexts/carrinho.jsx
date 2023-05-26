@@ -5,6 +5,7 @@ export const CarrinhoContext = createContext()
 export const CarrinhoProvider = ({ children }) => {
   const [produtoAdicionado, setProdutoAdicionado] = useState([])
   const [search, setSearch] = useState('')
+  const [quantidades, setQuantidades] = useState({})
 
   useEffect(() => {
     localStorage.setItem('@produto-carrinho', JSON.stringify(produtoAdicionado))
@@ -42,7 +43,9 @@ export const CarrinhoProvider = ({ children }) => {
         buscarItemNoCarrinho,
         search,
         setSearch,
-        handleSearch
+        handleSearch,
+        quantidades,
+        setQuantidades
       }}
     >
       {children}
