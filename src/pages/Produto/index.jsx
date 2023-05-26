@@ -6,6 +6,7 @@ import { CarrinhoContext } from '../../contexts/carrinho'
 
 const Container = styled.div`
   width: 100%;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,11 +16,44 @@ const Container = styled.div`
   .info {
     display: flex;
     width: 100%;
+    height: 100%;
     gap: 20px;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     img {
-      max-width: 500px;
-      max-height: 500px;
+      width: 50%;
+      max-height: 100%;
+      object-fit: contain;
+
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+
+    .infoText {
+      height: 100%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+
+    button {
+      height: 32px;
+      padding: 5px 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: var(--orange);
+      color: var(--black);
+      font-weight: 500;
     }
   }
 `
@@ -44,7 +78,7 @@ function ProdutoDetalhe() {
     <Container>
       <div className="info">
         <img src={produto.imagem} alt={produto.nome} />
-        <div>
+        <div className="infoText">
           <h1>{produto.nome}</h1>
 
           <span>
