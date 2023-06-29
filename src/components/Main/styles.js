@@ -54,7 +54,7 @@ export const Header = styled.div`
 
 export const Produtos = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;

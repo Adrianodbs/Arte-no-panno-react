@@ -50,4 +50,18 @@ export const Itens = styled.div`
   }
 `
 
-export const Resumo = styled.div``
+export const Resumo = styled.div`
+  button {
+    padding: 5px 20px;
+    border-radius: 4px;
+    margin-top: 10px;
+    background-color: var(--orange);
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`
