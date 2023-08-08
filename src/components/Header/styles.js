@@ -69,6 +69,22 @@ export const Right = styled.div`
   .links {
     display: flex;
     gap: 15px;
+    position: relative;
+
+    .cartLength {
+      width: 18px;
+      height: 18px;
+      background-color: var(--red);
+      color: #fff;
+      font-size: 12px;
+      position: absolute;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: -8px;
+      bottom: 2px;
+    }
   }
 `
 

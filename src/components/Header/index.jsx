@@ -7,7 +7,8 @@ import { useContext } from 'react'
 import { CarrinhoContext } from '../../contexts/carrinho'
 
 function Header() {
-  const { search, setSearch, handleSearch } = useContext(CarrinhoContext)
+  const { search, setSearch, handleSearch, produtoAdicionado } =
+    useContext(CarrinhoContext)
   return (
     <C.Container>
       <h1>Arte no Panno</h1>
@@ -27,6 +28,9 @@ function Header() {
           </Link>
           <Link to="/carrinho">
             <BsCartDash size={25} className="cart" />
+            {produtoAdicionado.length > 0 && (
+              <div className="cartLength">{produtoAdicionado.length}</div>
+            )}
           </Link>
         </div>
       </C.Right>
