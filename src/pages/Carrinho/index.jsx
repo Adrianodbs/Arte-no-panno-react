@@ -28,16 +28,28 @@ function Carrinho() {
   return (
     <C.Container>
       <C.Itens>
-        {itens.map((item, index) => (
-          <div key={index}>
-            <Produto img={item.imagem} titulo={item.nome} valor={item.valor} />
-            <div className="actions">
-              <button onClick={() => handleExcluirProduto(item)}>
-                <BsFillTrash3Fill size={20} color="#fff" />
-              </button>
-            </div>
-          </div>
-        ))}
+        {itens.length > 0 ? (
+          <>
+            {itens.map((item, index) => (
+              <div key={index}>
+                <Produto
+                  img={item.imagem}
+                  titulo={item.nome}
+                  valor={item.valor}
+                />
+                <div className="actions">
+                  <button onClick={() => handleExcluirProduto(item)}>
+                    <BsFillTrash3Fill size={20} color="#fff" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </>
+        ) : (
+          <>
+            <h1>Você ainda não registrou nenhum produto!</h1>
+          </>
+        )}
       </C.Itens>
       <C.Resumo>
         <h1>Resumo</h1>

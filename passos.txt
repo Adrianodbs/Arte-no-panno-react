@@ -1,3 +1,4 @@
 - Salvar itens no localStorage (Feito)
+- Mensagem de nenhum produto adicionado (Feito)
 
 - Não mostrar itens repetidos, mas mostrar a sua quantidade

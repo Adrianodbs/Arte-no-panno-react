@@ -11,7 +11,7 @@ export const CarrinhoProvider = ({ children }) => {
   const [quantidades, setQuantidades] = useState({})
 
   useEffect(() => {
-    localStorage.getItem('@produto-carrinho')
+    storedProdutos
   }, [produtoAdicionado])
 
   function handleSearch() {
@@ -39,6 +39,7 @@ export const CarrinhoProvider = ({ children }) => {
 
     return JSON.parse(itemAdicionado)
   }
+
   return (
     <CarrinhoContext.Provider
       value={{
