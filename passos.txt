@@ -1,0 +1,3 @@
+- Salvar itens no localStorage (Feito)
+
+- Não mostrar itens repetidos, mas mostrar a sua quantidade

@@ -3,12 +3,15 @@ import { createContext, useState, useEffect } from 'react'
 export const CarrinhoContext = createContext()
 
 export const CarrinhoProvider = ({ children }) => {
-  const [produtoAdicionado, setProdutoAdicionado] = useState([])
+  const storedProdutos = localStorage.getItem('@produto-carrinho')
+  const [produtoAdicionado, setProdutoAdicionado] = useState(
+    storedProdutos ? JSON.parse(storedProdutos) : []
+  )
   const [search, setSearch] = useState('')
   const [quantidades, setQuantidades] = useState({})
 
   useEffect(() => {
-    localStorage.setItem('@produto-carrinho', JSON.stringify(produtoAdicionado))
+    localStorage.getItem('@produto-carrinho')
   }, [produtoAdicionado])
 
   function handleSearch() {
@@ -16,8 +19,11 @@ export const CarrinhoProvider = ({ children }) => {
   }
 
   function adicionarProdutoAoCarrinho(item) {
-    setProdutoAdicionado(prev => [...prev, item])
-    localStorage.setItem('@produto-carrinho', JSON.stringify(produtoAdicionado))
+    setProdutoAdicionado(prev => {
+      const updatedList = [...prev, item]
+      localStorage.setItem('@produto-carrinho', JSON.stringify(updatedList))
+      return updatedList
+    })
   }
 
   function excluirProdutoDoCarrinho(item) {
